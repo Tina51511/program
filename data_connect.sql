@@ -1,0 +1,1 @@
+select * from [dbo].[蕨類];
