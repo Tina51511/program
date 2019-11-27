@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/background_picture"
     android:layout_width="match_parent"
@@ -24,25 +25,27 @@
 
         <TextView
             android:id="@+id/textView10"
-            android:layout_width="381dp"
-            android:layout_height="425dp"
+            android:layout_width="399dp"
+            android:layout_height="wrap_content"
             android:text="      \n
-      E-mail： \n
-      xxxxxx@gmail.com \n\n
-      TEL：\n
-      0912-345-678 \n\n
-      地址：\n
-      台北市中和區XXX街道XX號 \n\n
-      製作成員：\n
-       xx xx xx xx
+     E-mail： \n
+     plant_fun_ntub@gmail.com \n\n
+     TEL：\n
+     0912-332-227 \n\n
+     地址：\n
+     台北市中正區濟南路321號 \n\n
+     製作成員：\n
+     小瑜、慈慈、琇琇、思源
 
 "
+            android:textColor="@color/colortxt"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/colortxt"/>/>
+            android:textStyle="bold" /><![CDATA[
 
+        />
+
+    ]]>
     </LinearLayout>
-
 
 
 </LinearLayout>
