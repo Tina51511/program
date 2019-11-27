@@ -60,12 +60,10 @@ public class ResultActivity extends Activity {
                     .build();
             try {
                 Response response = client.newCall(request).execute();
-                JSONObject jsonObject = new JSONObject(response.body().string());
-                String employee_salary = jsonObject.getString("cname") + "\n" + jsonObject.getString("sname") + "\n" +
-                        jsonObject.getString("place") + "\n" + jsonObject.getString("life") + "\n" + jsonObject.getString("branch") + "\n" +
-                        jsonObject.getString("leaf") + "\n" + jsonObject.getString("spore") + "\n" + jsonObject.getString("fert") + "\n" + jsonObject.getString("describe");
 
-                return employee_salary;
+
+//                return employee_salary;
+                return response.body().string();
             } catch (Exception e) {
                 Log.e("TAT", e.getMessage());
             }
@@ -78,8 +76,20 @@ public class ResultActivity extends Activity {
         }
 
         protected void onPostExecute(String result) {
+            try {JSONObject jsonObject = new JSONObject(result);
+            String employee_salary = jsonObject.getString("cname") + "\n" + jsonObject.getString("sname") + "\n" +
+                    jsonObject.getString("place") + "\n" + jsonObject.getString("life") + "\n" + jsonObject.getString("branch") + "\n" +
+                    jsonObject.getString("leaf") + "\n" + jsonObject.getString("spore") + "\n" + jsonObject.getString("fert") + "\n" + jsonObject.getString("describe");
             Glide.with(ResultActivity.this).load("http://140.131.114.154:80/connection/img/" + id + ".jpg").into(mImageView);
-            mTextView.setText("植物中文名 : " + result);
+            mTextView.setText("•蕨類中文名 : " + jsonObject.getString("cname") + "\n" + "•蕨類英文名 : "  + "\n" +  jsonObject.getString("sname") + "\n"+
+                    "•原生地 : " + jsonObject.getString("place") + "\n" + "•生活型 : "+ jsonObject.getString("life") + "\n" + "•樹幹枝條的描述 : "+ jsonObject.getString("branch") + "\n" +
+                    "•葉的描述 : " + jsonObject.getString("leaf") + "\n" + "•孢子樣式 : "+ jsonObject.getString("spore") + "\n" + "•生育環境 : "+ jsonObject.getString("fert") + "\n" +
+                    "•用途說明 : "+ jsonObject.getString("describe")
+            );
+            } catch (Exception e) {
+                Log.e("TAT", e.getMessage());
+            }
+
         }
     }
 }
