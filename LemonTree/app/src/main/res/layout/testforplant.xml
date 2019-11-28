@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_picture">
+
+    <!--切换题目-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="554dp"
+        android:layout_weight="0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="11dp">
+
+            <TextView
+                android:id="@+id/notuse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" 问
+                                               刘
+                                               桂
+                                               林
+                                               是
+                                               何
+                                               许
+                                               人
+                                               也
+                                               ？"
+                android:textColor="@color/zxing_transparent"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="11dp">
+
+            <TextView
+                android:id="@+id/no1"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="問:劉桂林"
+                android:textColor="@color/zxing_transparent"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="問:劉桂林是何許人也？"
+                android:textColor="@color/colortxt"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/mRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp">
+                <!--四个选项-->
+                <RadioButton
+                    android:id="@+id/RadioA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="大帥哥"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/RadioB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="参照A"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/RadioC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="参照B"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/RadioD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="参照C"
+                    android:textSize="20sp" />
+                <!--正确答案，默认是隐藏的-->
+                <TextView
+                    android:id="@+id/tv_result"
+                    android:layout_width="373dp"
+                    android:layout_height="198dp"
+                    android:layout_marginTop="10dp"
+                    android:text="正确答案：肯定選A呀！"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    android:visibility="invisible" />
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:layout_marginLeft="100dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="58dp"
+            android:layout_margin="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/no2"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="問:劉桂林"
+                android:textColor="@color/zxing_transparent" />
+
+            <Button
+                android:id="@+id/btn_up"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/up_down_btn"
+                android:text="上一題"
+                android:textColor="@color/colortxt"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_down"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/up_down_btn"
+                android:text="下一題"
+                android:textColor="@color/colortxt"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/no3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" 問劉桂琳是何許人也?"
+            android:textColor="@color/zxing_transparent"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
