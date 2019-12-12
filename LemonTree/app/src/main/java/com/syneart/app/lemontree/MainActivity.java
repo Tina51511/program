@@ -95,13 +95,30 @@ public class MainActivity extends Activity {
             });
         }
 
+    @Override
+    protected void onActivityResult ( int requestCode, int resultCode, Intent data){
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            if (result.getContents() == null) {
+                Toast.makeText(MainActivity.this, "You cancelled the scanning", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MainActivity.this, result.getContents(), Toast.LENGTH_SHORT).show();
+                Intent mIntent = new Intent(MainActivity.this, ResultActivity.class);
+                mIntent.putExtra("TEXT_RESULT", result.getContents());
+                startActivity(mIntent);
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
     private void initFile() {
         //判断数据库是否拷贝到相应的目录下
        // if (new File(DB_PATH + DB_NAME).exists() == false) {
-         //   File dir = new File(DB_PATH);
-           // if (!dir.exists()) {
-             //   dir.mkdir();
-            //}
+        //    File dir = new File(DB_PATH);
+         //   if (!dir.exists()) {
+          //      dir.mkdir();
+           // }
 
             //复制文件
             try {
@@ -128,8 +145,8 @@ public class MainActivity extends Activity {
                 e.printStackTrace();
             }
 
-       // }
-    }
+        }
+    //}
 
 
 }
